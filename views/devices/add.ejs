@@ -1,0 +1,12 @@
+﻿<h2>เพิ่มอุปกรณ์</h2>
+<form method="POST" action="/devices/add">
+  <input name="name" placeholder="ชื่ออุปกรณ์">
+  <input name="serialNumber" placeholder="รหัสเครื่อง">
+  <select name="department">
+    <% departments.forEach(dep => { %>
+      <option value="<%= dep._id %>"><%= dep.name %></option>
+    <% }) %>
+  </select>
+  <input name="location" placeholder="สถานที่">
+  <button type="submit">เพิ่ม</button>
+</form>

@@ -1,0 +1,16 @@
+﻿<h2>Dashboard รายเดือน</h2>
+<form method="POST" action="/dashboard/filter">
+  <input type="number" name="year" value="<%= selectedYear %>">
+  <button type="submit">กรอง</button>
+</form>
+<canvas id="chart"></canvas>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  new Chart(document.getElementById('chart'), {
+    type: 'bar',
+    data: {
+      labels: <%= JSON.stringify(monthlyStats.map(m => m.month)) %>,
+      datasets: [{ label: 'จำนวนซ่อม', data: <%= JSON.stringify(monthlyStats.map(m => m.count)) %> }]
+    }
+  });
+</script>

@@ -1,0 +1,11 @@
+﻿<h2>รายการซ่อม</h2>
+<table>
+  <tr><th>อุปกรณ์</th><th>ปัญหา</th><th>สถานะ</th></tr>
+  <% repairs.forEach(r => { %>
+    <tr>
+      <td><%= r.device.name %></td>
+      <td><%= r.issue %></td>
+      <td><%= r.status %></td>
+    </tr>
+  <% }) %>
+</table>

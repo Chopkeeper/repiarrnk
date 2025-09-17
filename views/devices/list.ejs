@@ -1,0 +1,7 @@
+﻿<h2>รายการอุปกรณ์</h2>
+<table>
+  <tr><th>ชื่อ</th><th>รหัส</th><th>หน่วยงาน</th></tr>
+  <% devices.forEach(d => { %>
+    <tr><td><%= d.name %></td><td><%= d.serialNumber %></td><td><%= d.department.name %></td></tr>
+  <% }) %>
+</table>

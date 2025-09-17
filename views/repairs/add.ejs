@@ -1,0 +1,16 @@
+﻿<h2>แจ้งซ่อม</h2>
+<form method="POST" action="/repairs/add">
+  <select name="device">
+    <% devices.forEach(d => { %>
+      <option value="<%= d._id %>"><%= d.name %></option>
+    <% }) %>
+  </select>
+  <input name="issue" placeholder="ปัญหา">
+  <input type="date" name="receivedDate">
+  <select name="department">
+    <% departments.forEach(dep => { %>
+      <option value="<%= dep._id %>"><%= dep.name %></option>
+    <% }) %>
+  </select>
+  <button type="submit">แจ้งซ่อม</button>
+</form>

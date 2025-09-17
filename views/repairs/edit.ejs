@@ -1,0 +1,10 @@
+﻿<h2>อัปเดตสถานะ</h2>
+<form method="POST" action="/repairs/<%= repair._id %>/update">
+  <select name="status">
+    <option value="Pending" <%= repair.status === 'Pending' ? 'selected' : '' %>>รอดำเนินการ</option>
+    <option value="In Progress" <%= repair.status === 'In Progress' ? 'selected' : '' %>>กำลังซ่อม</option>
+    <option value="Completed" <%= repair.status === 'Completed' ? 'selected' : '' %>> เสร็จแล้ว</option >
+  </select >
+    <input type="date" name="completedDate" value="<%= repair.completedDate?.toISOString().split('T')[0] || '' %>">
+        <button type="submit">อัปเดต</button>
+    </form>

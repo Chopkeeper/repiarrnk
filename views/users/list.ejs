@@ -1,0 +1,20 @@
+﻿<h2>ผู้ใช้ทั้งหมด</h2>
+<table>
+  <tr><th>ชื่อผู้ใช้</th><th>บทบาท</th><th>จัดการ</th></tr>
+  <% users.forEach(u => { %>
+    <tr>
+      <td><%= u.username %></td>
+      <td><%= u.role %></td>
+      <td>
+        <form method="POST" action="/users/<%= u._id %>/delete"><button>ลบ</button></form>
+        <form method="POST" action="/users/<%= u._id %>/role">
+          <select name="role">
+            <option value="admin" <%= u.role === 'admin' ? 'selected' : '' %>>admin</option>
+            <option value="staff" <%= u.role === 'staff' ? 'selected' : '' %>>staff</option>
+          </select>
+          <button>เปลี่ยน</button>
+        </form>
+      </td>
+    </tr >
+  <% }) %>
+</table >
